@@ -13,13 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Exa + LiveKit Deep Researcher - Voice AI Research Assistant",
-  description: "Autonomous deep research agent with iterative planning, real-time UI updates via RPC streaming, and intelligent query clarification. Demonstrates how voice agents can conduct comprehensive multi-step research workflows.",
-  keywords: ["voice AI", "research assistant", "Exa", "LiveKit", "deep research", "AI agent"],
+  title: "Exa + LiveKit Deep Researcher - Assistant de Recherche IA Vocale",
+  description: "Agent de recherche approfondie autonome avec planification itérative, mises à jour de l'interface en temps réel via streaming RPC et clarification intelligente des requêtes. Démontre comment les agents vocaux peuvent mener des flux de recherche complets en plusieurs étapes.",
+  keywords: ["IA vocale", "assistant de recherche", "Exa", "LiveKit", "recherche approfondie", "agent IA"],
   authors: [{ name: "LiveKit" }],
   openGraph: {
     title: "Exa + LiveKit Deep Researcher",
-    description: "Voice AI Research Assistant - Autonomous deep research with real-time updates",
+    description: "Assistant de Recherche IA Vocale - Recherche autonome avec mises à jour en temps réel",
     type: "website",
   },
 };
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

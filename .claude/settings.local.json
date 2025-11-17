@@ -3,7 +3,10 @@
     "allow": [
       "Bash(pip uninstall:*)",
       "Bash(uv --version:*)",
-      "Bash(uv lock:*)"
+      "Bash(uv lock:*)",
+      "Bash(cat:*)",
+      "Bash(npm run build:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

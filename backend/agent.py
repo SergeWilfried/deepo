@@ -81,7 +81,7 @@ class ExaResearchAgent(Agent):
     
     async def on_enter(self):
         """Called when agent enters the session"""
-        self.session.say("Hey! I'm your research assistant. I can help you do deep research on any topic using EXA. Just tell me what you'd like to learn about!")
+        self.session.say("Salut ! Je suis votre assistant de recherche. Je peux vous aider à faire des recherches approfondies sur n'importe quel sujet en utilisant EXA. Dites-moi simplement ce que vous aimeriez apprendre !")
     
     @function_tool()
     async def start_research_job(
@@ -115,7 +115,7 @@ class ExaResearchAgent(Agent):
                 pass
             else:
                 logger.info(f"Blocked call - research already active (state: {job_manager.state.value})")
-                return "I'm already working on research. Please wait for it to complete or ask me to cancel it first."
+                return "Je travaille déjà sur une recherche. Veuillez attendre qu'elle se termine ou demandez-moi de l'annuler d'abord."
         
         if not userdata.orchestrator:
             status_handler = StatusHandler(ctx=userdata.ctx, session=self.session)
@@ -133,7 +133,7 @@ class ExaResearchAgent(Agent):
         
         if job_manager.state == JobState.CLARIFYING:
             if not confirmed and (query is None or query == job_manager.original_query):
-                return "I'm waiting for your answer to the clarification question above. Please confirm or provide more details."
+                return "J'attends votre réponse à la question de clarification ci-dessus. Veuillez confirmer ou fournir plus de détails."
             
             if confirmed:
                 final_query = query if query and query != job_manager.original_query else job_manager.original_query
@@ -141,7 +141,7 @@ class ExaResearchAgent(Agent):
                 final_query = query
             
             if not final_query:
-                return "I don't have a research query to work with. Please provide a research question."
+                return "Je n'ai pas de requête de recherche avec laquelle travailler. Veuillez fournir une question de recherche."
             
             job_manager.clarified_query = final_query
             request_id = job_manager.request_id or f"research_{int(datetime.now().timestamp())}"
@@ -152,10 +152,10 @@ class ExaResearchAgent(Agent):
                 run_research_job(self.session, userdata, userdata.orchestrator, request_id, final_query)
             )
             
-            return f"Perfect! Starting deep research on: {final_query}. I'll keep you updated as I make progress!"
+            return f"Parfait ! Démarrage de la recherche approfondie sur : {final_query}. Je vous tiendrai informé de mes progrès !"
         
         if not query:
-            return "Please provide a research question or topic to investigate."
+            return "Veuillez fournir une question de recherche ou un sujet à investiguer."
         
         job_manager.reset()
         request_id = f"research_{int(datetime.now().timestamp())}"
@@ -178,7 +178,7 @@ class ExaResearchAgent(Agent):
                 await send_rpc_to_ui_safe(userdata.ctx, "exa.research/status", {
                     "requestId": request_id,
                     "phase": "clarifying",
-                    "title": "Clarification needed",
+                    "title": "Clarification nécessaire",
                     "message": clarification_message,
                     "stats": {},
                     "ts": datetime.now().timestamp(),
@@ -197,7 +197,7 @@ class ExaResearchAgent(Agent):
                     run_research_job(self.session, userdata, userdata.orchestrator, request_id, query)
                 )
                 
-                return f"Perfect! I found relevant results. Starting deep research on: {query}. I'll keep you updated as I make progress!"
+                return f"Parfait ! J'ai trouvé des résultats pertinents. Démarrage de la recherche approfondie sur : {query}. Je vous tiendrai informé de mes progrès !"
             
         except Exception as e:
             logger.error(f"Error in quick search or clarification: {e}", exc_info=True)
@@ -208,7 +208,7 @@ class ExaResearchAgent(Agent):
                 run_research_job(self.session, userdata, userdata.orchestrator, request_id, query)
             )
             
-            return f"Starting deep research on: {query}. I'll keep you updated as I make progress!"
+            return f"Démarrage de la recherche approfondie sur : {query}. Je vous tiendrai informé de mes progrès !"
     
     @function_tool()
     async def cancel_research_job(self, context: RunContext[ExaUserData]) -> str:
@@ -222,11 +222,11 @@ class ExaResearchAgent(Agent):
         job_manager = userdata.job_manager
         
         if not job_manager or not job_manager.is_active():
-            return "There's no research job currently running."
-        
+            return "Il n'y a aucune recherche en cours actuellement."
+
         job_manager.cancel()
-        
-        return f"Canceling the research job. Give me a moment to wrap things up."
+
+        return f"Annulation de la recherche en cours. Donnez-moi un instant pour terminer."
     
     @function_tool()
     async def check_research_status(self, context: RunContext[ExaUserData]) -> str:
@@ -243,34 +243,34 @@ class ExaResearchAgent(Agent):
         job_manager = userdata.job_manager
         
         if not job_manager or job_manager.state == JobState.IDLE:
-            return "No research job is currently running. You can start one by asking me to research a topic!"
+            return "Aucune recherche n'est en cours actuellement. Vous pouvez en démarrer une en me demandant de rechercher un sujet !"
         
         state = job_manager.state.value
         progress = job_manager.progress
         
         if job_manager.state == JobState.DONE:
             notes_count = len(job_manager.notes)
-            return f"Research completed! I found {notes_count} key insights. The full report is ready on your screen."
-        
+            return f"Recherche terminée ! J'ai trouvé {notes_count} informations clés. Le rapport complet est prêt sur votre écran."
+
         if job_manager.state == JobState.CANCELED:
-            return "The research job was canceled."
-        
+            return "La recherche a été annulée."
+
         if job_manager.state == JobState.ERROR:
-            return "The research job encountered an error and couldn't complete."
-        
-        status_parts = [f"Research is currently {state}"]
-        
+            return "La recherche a rencontré une erreur et n'a pas pu se terminer."
+
+        status_parts = [f"La recherche est actuellement {state}"]
+
         if progress:
             if progress.current_subtopic:
-                status_parts.append(f"Working on: {progress.current_subtopic}")
-            
+                status_parts.append(f"Travail en cours sur : {progress.current_subtopic}")
+
             if progress.subtopics_completed > 0:
-                total = progress.total_subtopics or "unknown"
-                status_parts.append(f"Progress: {progress.subtopics_completed}/{total} subtopics completed")
-            
+                total = progress.total_subtopics or "inconnu"
+                status_parts.append(f"Progrès : {progress.subtopics_completed}/{total} sous-sujets terminés")
+
             if progress.sources_found > 0:
-                status_parts.append(f"Found {progress.sources_found} sources so far")
-        
+                status_parts.append(f"Trouvé {progress.sources_found} sources jusqu'à présent")
+
         return ". ".join(status_parts) + "."
     
     @function_tool()
@@ -290,10 +290,10 @@ class ExaResearchAgent(Agent):
         job_manager = userdata.job_manager
         
         if not job_manager or not job_manager.final_report:
-            return "No research report is available yet. I haven't completed any research jobs."
+            return "Aucun rapport de recherche n'est encore disponible. Je n'ai terminé aucune recherche."
         
         report = job_manager.final_report
-        title = job_manager.report_title or "Research Report"
+        title = job_manager.report_title or "Rapport de Recherche"
         
         return f"# {title}\n\n{report}"
 

@@ -13,43 +13,43 @@ import { useState } from "react";
 const RESEARCH_SUGGESTIONS = [
   {
     icon: Brain,
-    title: "AI & Machine Learning",
-    topic: "Latest advances in large language models and transformers",
+    title: "IA & Apprentissage Automatique",
+    topic: "Dernières avancées des grands modèles de langage et des transformers",
     color: "fgAccent1",
     bgColor: "bgAccent1",
   },
   {
     icon: Rocket,
-    title: "Space Technology",
-    topic: "Recent breakthroughs in commercial space exploration",
+    title: "Technologie Spatiale",
+    topic: "Percées récentes dans l'exploration spatiale commerciale",
     color: "fgModerate",
     bgColor: "bgModerate1",
   },
   {
     icon: Code,
-    title: "Web Development",
-    topic: "Modern frontend frameworks and their performance comparisons",
+    title: "Développement Web",
+    topic: "Frameworks frontend modernes et comparaisons de performances",
     color: "fgSuccess",
     bgColor: "bgSuccess1",
   },
   {
     icon: TrendingUp,
-    title: "Quantum Computing",
-    topic: "Current state of quantum computing applications",
+    title: "Informatique Quantique",
+    topic: "État actuel des applications de l'informatique quantique",
     color: "fgAccent2",
     bgColor: "bgAccent2",
   },
   {
     icon: Lightbulb,
-    title: "Clean Energy",
-    topic: "Innovations in renewable energy and battery technology",
+    title: "Énergie Propre",
+    topic: "Innovations en énergie renouvelable et technologie des batteries",
     color: "fgCaution1",
     bgColor: "bgCaution1",
   },
   {
     icon: Sparkles,
-    title: "Biotechnology",
-    topic: "CRISPR and gene editing recent developments",
+    title: "Biotechnologie",
+    topic: "Développements récents de CRISPR et de l'édition génétique",
     color: "fgAccent1",
     bgColor: "bgAccent1",
   },
@@ -81,7 +81,7 @@ export function EmptyState() {
           ) : (
             <div className="agent-visualizer">
               <div className="flex items-center justify-center h-full text-fg3 text-sm">
-                Waiting for agent to join...
+                En attente de l&apos;agent...
               </div>
             </div>
           )}
@@ -90,11 +90,11 @@ export function EmptyState() {
         {/* Text Content */}
         <div className="flex flex-col items-center gap-2 text-center">
           <h3 className="text-base font-semibold text-fg0">
-            Ready to research
+            Prêt à rechercher
           </h3>
           <p className="text-sm text-fg3 leading-relaxed">
-            Start a research job using voice commands, or try one of these
-            topics:
+            Démarrez une recherche avec des commandes vocales, ou essayez l&apos;un de ces
+            sujets :
           </p>
         </div>
 
@@ -150,9 +150,9 @@ export function EmptyState() {
                   <div className="absolute inset-x-0 -bottom-1 flex justify-center">
                     <div className="bg-bg0 border border-separator1 rounded-full px-3 py-1 shadow-lg">
                       <p className="text-xs text-fg2">
-                        💬 Say:{" "}
+                        💬 Dites :{" "}
                         <span className="font-semibold text-fgAccent1">
-                          &quot;Research {suggestion.title.toLowerCase()}&quot;
+                          &quot;Rechercher {suggestion.title.toLowerCase()}&quot;
                         </span>
                       </p>
                     </div>
@@ -166,7 +166,7 @@ export function EmptyState() {
         {/* Additional Hint */}
         <div className="flex items-center gap-2 text-xs text-fg4 mt-2">
           <div className="w-2 h-2 rounded-full bg-fgAccent1 animate-pulse" />
-          <span>Click any suggestion to see the voice command</span>
+          <span>Cliquez sur une suggestion pour voir la commande vocale</span>
         </div>
 
         {/* Documentation Links */}

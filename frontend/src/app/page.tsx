@@ -42,7 +42,7 @@ export default function Home() {
       setConnected(true);
       setError("");
     } catch (err) {
-      setError("Failed to connect. Please check your server configuration.");
+      setError("Échec de la connexion. Veuillez vérifier la configuration de votre serveur.");
       console.error(err);
       setConnecting(false);
     }
@@ -61,14 +61,14 @@ export default function Home() {
             {/* Title */}
             <div className="flex flex-col items-center gap-2 text-center">
               <h1 className="text-xl font-semibold text-fg0">
-                Exa + LiveKit Deep Researcher
+                Baangren AI
               </h1>
-              <p className="text-sm text-fg3">Voice AI Research Assistant</p>
+              <p className="text-sm text-fg3">Assistant de Recherche IA Vocale</p>
               <p className="text-xs text-fg4 leading-relaxed mt-2 max-w-sm">
-                Demonstrates autonomous deep research with iterative planning,
-                real-time UI updates via RPC streaming, and intelligent query
-                clarification—showcasing how voice agents can conduct
-                comprehensive multi-step research workflows.
+                Démontre la recherche approfondie autonome avec planification itérative,
+                mises à jour de l&apos;interface en temps réel via streaming RPC et
+                clarification intelligente des requêtes—montrant comment les agents vocaux
+                peuvent mener des flux de recherche complets en plusieurs étapes.
               </p>
             </div>
 
@@ -76,9 +76,9 @@ export default function Home() {
             <div className="w-full bg-bgCaution1/20 border border-fgCaution1/30 rounded-lg px-4 py-3">
               <p className="text-xs text-fg2 leading-relaxed text-center">
                 <span className="font-semibold text-fgCaution1">
-                  Local development:
+                  Développement local :
                 </span>{" "}
-                Make sure to run the Python agent first with{" "}
+                Assurez-vous d&apos;exécuter l&apos;agent Python d&apos;abord avec{" "}
                 <code className="bg-bg2 px-1.5 py-0.5 rounded text-fgAccent1 font-mono">
                   python agent.py dev
                 </code>
@@ -102,7 +102,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="text-fg3 hover:text-fgAccent1 underline transition-colors"
               >
-                LiveKit Agents Docs
+                Agents Docs
               </a>
               <span className="text-separator2">•</span>
               <a
@@ -111,7 +111,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="text-fg3 hover:text-fgAccent1 underline transition-colors"
               >
-                LiveKit Slack
+                Slack
               </a>
             </div>
 
@@ -121,7 +121,7 @@ export default function Home() {
               disabled={connecting}
               className="w-full bg-fgAccent1 text-bg0 py-3 px-6 rounded-lg hover:bg-fgAccent2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-sm"
             >
-              {connecting ? "Connecting..." : "Connect to Room"}
+              {connecting ? "Connexion..." : "Se connecter au salon"}
             </button>
 
             {/* Error Message */}
@@ -196,7 +196,7 @@ function HeaderControls() {
       <div className="flex items-center gap-4">
         <h1 className="text-xl font-bold text-fg0">Exa + LiveKit Deep Researcher</h1>
         <div className="h-4 w-px bg-separator2" />
-        <span className="text-sm text-fg3">Voice AI Research Assistant</span>
+        <span className="text-sm text-fg3">Assistant de Recherche IA Vocale</span>
       </div>
       <div className="flex items-center gap-3">
         <TrackToggle
@@ -208,7 +208,7 @@ function HeaderControls() {
           className={`bg-bg2 hover:bg-bg3 text-fg1 border border-separator1 rounded-full p-2.5 transition-colors ${
             agentMuted ? "opacity-50" : ""
           }`}
-          title={agentMuted ? "Unmute Agent" : "Mute Agent"}
+          title={agentMuted ? "Activer le son de l'agent" : "Couper le son de l'agent"}
         >
           {agentMuted ? (
             <VolumeX className="w-5 h-5" />
@@ -220,7 +220,7 @@ function HeaderControls() {
           onClick={() => window.location.reload()}
           className="bg-bgSerious1 hover:bg-fgSerious1 text-fgSerious1 hover:text-bg0 border border-fgSerious1 rounded-lg px-4 py-2 text-sm font-medium transition-colors"
         >
-          Disconnect
+          Déconnecter
         </button>
       </div>
     </div>

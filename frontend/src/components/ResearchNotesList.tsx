@@ -41,9 +41,9 @@ export function ResearchNotesList({ notes }: ResearchNotesListProps) {
   return (
     <div className="flex flex-col gap-2">
       <div className="flex items-center justify-between">
-        <h2 className="text-sm font-semibold text-fg0">Research Findings</h2>
+        <h2 className="text-sm font-semibold text-fg0">Résultats de Recherche</h2>
         <div className="text-xs text-fg3">
-          {notes.length} {notes.length === 1 ? "finding" : "findings"}
+          {notes.length} {notes.length === 1 ? "résultat" : "résultats"}
         </div>
       </div>
       <div className="bg-bg1 border border-separator1 rounded-lg divide-y divide-separator1">
@@ -121,8 +121,8 @@ export function ResearchNotesList({ notes }: ResearchNotesListProps) {
                             className="inline-flex items-center text-[9px] text-fg4 hover:text-fgAccent1 bg-bg2 border border-separator1 hover:border-fgAccent1 rounded px-2 py-0.5 transition-colors cursor-pointer"
                             title={
                               isExpanded
-                                ? "Show less sources"
-                                : `Show ${validCitations.length - 3} more sources`
+                                ? "Afficher moins de sources"
+                                : `Afficher ${validCitations.length - 3} sources de plus`
                             }
                           >
                             {isExpanded

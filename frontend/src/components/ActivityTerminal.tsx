@@ -24,23 +24,23 @@ function formatStatusMessage(
   if (phase === "researching") {
     // Check specific actions first (these are more informative)
     if (title.includes("Synthesizing")) {
-      return `Analyzing ${
+      return `Analyse de ${
         stats?.sources_fetched || stats?.sources || ""
       } sources`;
     }
     if (title.includes("Gathering")) {
-      return `Found ${stats?.results || stats?.sources || ""} sources`;
+      return `${stats?.results || stats?.sources || ""} sources trouvées`;
     }
     if (title.includes("Starting")) {
       const topic = stats?.subtopic || stats?.topic;
-      return topic ? `Starting: ${truncate(String(topic), 35)}` : message;
+      return topic ? `Démarrage : ${truncate(String(topic), 35)}` : message;
     }
     // Fallback to general topic display
     if (stats?.subtopic) {
-      return `Researching: ${truncate(String(stats.subtopic), 40)}`;
+      return `Recherche : ${truncate(String(stats.subtopic), 40)}`;
     }
     if (stats?.topic) {
-      return `Researching: ${truncate(String(stats.topic), 40)}`;
+      return `Recherche : ${truncate(String(stats.topic), 40)}`;
     }
     if (message && message.length > 0) {
       return truncate(message, 50);
@@ -49,7 +49,7 @@ function formatStatusMessage(
 
   if (phase === "compressing") {
     const notesCount = stats?.notes_count || "";
-    return notesCount ? `Consolidating ${notesCount} topics` : message;
+    return notesCount ? `Consolidation de ${notesCount} sujets` : message;
   }
 
   if (phase === "reporting") {
@@ -105,7 +105,7 @@ export function ActivityTerminal({
                 {(() => {
                   const recent = statusHistory.slice(-5).reverse();
                   const active = recent[rollingTextIndex] || recent[0];
-                  if (!active) return "STANDBY";
+                  if (!active) return "EN ATTENTE";
                   const message = formatStatusMessage(active);
                   return `[${active.phase.toUpperCase()}] ${message}`;
                 })()}

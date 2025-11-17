@@ -20,14 +20,14 @@ export function ClarificationCard({ clarification }: ClarificationCardProps) {
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-2">
               <h3 className="text-sm font-semibold text-fgAccent1">
-                Clarification Needed
+                Clarification Nécessaire
               </h3>
             </div>
             <p className="text-sm text-fg0 mb-2 leading-relaxed">
               {clarification.question}
             </p>
             <div className="text-xs text-fg3 mt-3 pt-3 border-t border-separator1">
-              Original query:{" "}
+              Requête originale :{" "}
               <span className="font-medium text-fg2">
                 {clarification.originalQuery}
               </span>

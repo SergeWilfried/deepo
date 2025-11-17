@@ -131,7 +131,7 @@ export function ReportCard({ report }: ReportCardProps) {
         ) : (
           <div className="bg-bg1 border border-separator1 rounded-lg p-4 text-center">
             <p className="text-sm text-fg3">
-              Report content not available. Check console for details.
+              Contenu du rapport non disponible. Vérifiez la console pour plus de détails.
             </p>
           </div>
         )}
