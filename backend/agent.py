@@ -315,7 +315,7 @@ async def entrypoint(ctx: JobContext):
         stt="assemblyai/universal-streaming",
         llm="deepseek-ai/deepseek-v3",
         tts=inference.TTS(
-            model="elevenlabs/multilingual-v2", 
+            model="elevenlabs/eleven_multilingual_v2", 
             voice="4SFJvuIUvxaPLgk8FoK3", 
             language="fr"
         ),
