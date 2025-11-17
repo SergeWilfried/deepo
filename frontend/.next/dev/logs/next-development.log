@@ -1,27 +1,2 @@
-[00:00:01.896] Server  LOG      ✓ Ready in 1349ms
-[00:00:16.426] Server  LOG      ○ Compiling / ...
-[00:00:34.627] Server  WARN     ⚠ ./node_modules/.pnpm/shiki@3.15.0/node_modules/shiki/dist
-Package shiki can't be external
-The request shiki/wasm matches serverExternalPackages (or the default list).
-The request could not be resolved by Node.js from the project directory.
-Packages that should be external need to be installed in the project directory, so they can be resolved from the output files.
-Try to install it into the project directory by running npm install shiki from the project directory.
-
-
-[00:00:34.646] Server  WARN     ⚠ ./node_modules/.pnpm/streamdown@1.5.1_@types+mda_ba9df5ae3e2a681b56f900de87c0272b/node_modules/streamdown/dist
-Package shiki can't be external
-The request shiki matches serverExternalPackages (or the default list).
-The request could not be resolved by Node.js from the project directory.
-Packages that should be external need to be installed in the project directory, so they can be resolved from the output files.
-Try to install it into the project directory by running npm install shiki from the project directory.
-
-
-[00:00:34.743] Server  WARN     ⚠ ./node_modules/.pnpm/streamdown@1.5.1_@types+mda_ba9df5ae3e2a681b56f900de87c0272b/node_modules/streamdown/dist
-Package shiki can't be external
-The request shiki/engine/javascript matches serverExternalPackages (or the default list).
-The request could not be resolved by Node.js from the project directory.
-Packages that should be external need to be installed in the project directory, so they can be resolved from the output files.
-Try to install it into the project directory by running npm install shiki from the project directory.
-
-
-[00:00:37.703] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:01.809] Server  LOG      ✓ Ready in 1317ms
+[00:00:04.917] Server  LOG      ○ Compiling / ...
