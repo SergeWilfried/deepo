@@ -25,12 +25,13 @@ import os
 from dotenv import load_dotenv
 from pydantic import Field
 from livekit.agents import (
-    Agent, AgentSession, JobContext, WorkerOptions, cli, function_tool, RoomInputOptions
+    Agent, AgentSession, JobContext, WorkerOptions, cli, function_tool, RoomInputOptions, inference
 )
 from livekit.agents.voice import RunContext
 from livekit.plugins import silero
 from livekit.plugins.turn_detector.multilingual import MultilingualModel
 from livekit.plugins import noise_cancellation
+from livekit.agents import AgentSession, inference
 
 from agent.schemas import JobState
 from agent.job_manager import JobManager
@@ -313,7 +314,11 @@ async def entrypoint(ctx: JobContext):
         vad=silero.VAD.load(),
         stt="assemblyai/universal-streaming",
         llm="deepseek-ai/deepseek-v3",
-        tts="inworld/inworld-tts-1:Ashley",
+        tts=inference.TTS(
+            model="elevenlabs/multilingual-v2", 
+            voice="4SFJvuIUvxaPLgk8FoK3", 
+            language="fr"
+        ),
         turn_detection=MultilingualModel(),
     )
     
