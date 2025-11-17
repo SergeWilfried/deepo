@@ -55,8 +55,8 @@ load_dotenv()
 def get_agent_name() -> str:
     """Get agent name based on environment (dev or prod)"""
     if os.getenv("DEV"):
-        return "exa-deep-researcher-dev"
-    return "exa-deep-researcher"
+        return "baangre-dev"
+    return "baangre"
 
 
 @dataclass
@@ -314,7 +314,7 @@ async def entrypoint(ctx: JobContext):
         vad=silero.VAD.load(),
         stt=inference.STT(language="fr"),
         llm="deepseek-ai/deepseek-v3",
-        tts="elevenlabs/eleven_flash_v2_5:4SFJvuIUvxaPLgk8FoK3",
+        tts="inworld/inworld-tts-1:Ashley",
         turn_detection=MultilingualModel(),
     )
     
