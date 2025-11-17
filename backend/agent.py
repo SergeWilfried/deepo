@@ -314,7 +314,7 @@ async def entrypoint(ctx: JobContext):
         vad=silero.VAD.load(),
         stt=inference.STT(language="fr"),
         llm="deepseek-ai/deepseek-v3",
-        tts="elevenlabs/eleven_turbo_v2_5:4SFJvuIUvxaPLgk8FoK3",
+        tts="elevenlabs/eleven_flash_v2_5:4SFJvuIUvxaPLgk8FoK3",
         turn_detection=MultilingualModel(),
     )
     
