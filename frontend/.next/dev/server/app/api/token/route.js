@@ -1,0 +1,11 @@
+var R=require("../../../chunks/[turbopack]_runtime.js")("server/app/api/token/route.js")
+R.c("server/chunks/[root-of-the-server]__e8868ef2._.js")
+R.c("server/chunks/59315_next_21707cd8._.js")
+R.c("server/chunks/2a81c_@bufbuild_protobuf_dist_esm_a3ee8a86._.js")
+R.c("server/chunks/6f37b_@livekit_protocol_dist_index_mjs_3681f6a9._.js")
+R.c("server/chunks/90496_jose_dist_node_esm_25a249fc._.js")
+R.c("server/chunks/e4805_livekit-server-sdk_dist_2259f51f._.js")
+R.c("server/chunks/[root-of-the-server]__396fd386._.js")
+R.c("server/chunks/_next-internal_server_app_api_token_route_actions_0f0e8cc7.js")
+R.m("[project]/node_modules/.pnpm/next@16.0.1_@babel+core@7.2_048eab391ea2e03c70ee64ac0670005b/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/src/app/api/token/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)")
+module.exports=R.m("[project]/node_modules/.pnpm/next@16.0.1_@babel+core@7.2_048eab391ea2e03c70ee64ac0670005b/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/src/app/api/token/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)").exports
