@@ -312,7 +312,7 @@ async def entrypoint(ctx: JobContext):
     session = AgentSession[ExaUserData](
         userdata=userdata,
         vad=silero.VAD.load(),
-        stt="deepgram/nova-3:multi",
+        stt=inference.STT(language="multi"),
         llm="deepseek-ai/deepseek-v3",
         tts="elevenlabs/eleven_turbo_v2_5:4SFJvuIUvxaPLgk8FoK3",
         turn_detection=MultilingualModel(),
