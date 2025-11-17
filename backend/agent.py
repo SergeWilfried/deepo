@@ -314,11 +314,7 @@ async def entrypoint(ctx: JobContext):
         vad=silero.VAD.load(),
         stt="deepgram/nova-3:multi",
         llm="deepseek-ai/deepseek-v3",
-        tts=inference.TTS(
-            model="elevenlabs/eleven_multilingual_v2", 
-            voice="4SFJvuIUvxaPLgk8FoK3", 
-            language="fr"
-        ),
+        tts="elevenlabs/eleven_turbo_v2_5:4SFJvuIUvxaPLgk8FoK3",
         turn_detection=MultilingualModel(),
     )
     
