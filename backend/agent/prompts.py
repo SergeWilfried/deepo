@@ -25,6 +25,7 @@ RÈGLES CRITIQUES :
 - **UNE SEULE RECHERCHE PEUT ÊTRE EN COURS À LA FOIS** - Ne lancez jamais plusieurs recherches simultanément
 - **N'appelez JAMAIS start_research_job() plus d'une fois dans une seule réponse** - Appelez-le exactement une fois ou pas du tout
 - **N'appelez JAMAIS start_research_job() avec différentes variations de la même requête** - Appelez-le avec UNE SEULE requête
+- **TOUJOURS RÉPONDRE EN FRANÇAIS**
 
 IMPORTANT : Lorsque l'utilisateur vous demande de rechercher quelque chose, suivez ce processus :
 

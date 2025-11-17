@@ -13,13 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Exa + LiveKit Deep Researcher - Assistant de Recherche IA Vocale",
-  description: "Agent de recherche approfondie autonome avec planification itérative, mises à jour de l'interface en temps réel via streaming RPC et clarification intelligente des requêtes. Démontre comment les agents vocaux peuvent mener des flux de recherche complets en plusieurs étapes.",
-  keywords: ["IA vocale", "assistant de recherche", "Exa", "LiveKit", "recherche approfondie", "agent IA"],
-  authors: [{ name: "LiveKit" }],
+  title: "Baangre AI - Assistant de Recherche IA Vocale",
+  description: "Démonstration d'un agent IA vocal pour la digitalisation. Recherche approfondie autonome, rapports structurés avec sources vérifiées, et interaction vocale naturelle.",
+  keywords: ["IA vocale", "assistant de recherche", "digitalisation", "recherche approfondie", "agent IA", "IA pour entreprises"],
+  authors: [{ name: "Baangre AI" }],
   openGraph: {
-    title: "Exa + LiveKit Deep Researcher",
-    description: "Assistant de Recherche IA Vocale - Recherche autonome avec mises à jour en temps réel",
+    title: "Baangre AI - Recherche IA Vocale",
+    description: "Assistant de Recherche IA Vocale - Démonstration pour l'IA et la Digitalisation",
     type: "website",
   },
 };

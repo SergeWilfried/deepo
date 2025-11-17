@@ -61,58 +61,43 @@ export default function Home() {
             {/* Title */}
             <div className="flex flex-col items-center gap-2 text-center">
               <h1 className="text-xl font-semibold text-fg0">
-                Baangren AI
+                Baangre AI
               </h1>
               <p className="text-sm text-fg3">Assistant de Recherche IA Vocale</p>
               <p className="text-xs text-fg4 leading-relaxed mt-2 max-w-sm">
-                Démontre la recherche approfondie autonome avec planification itérative,
-                mises à jour de l&apos;interface en temps réel via streaming RPC et
-                clarification intelligente des requêtes—montrant comment les agents vocaux
-                peuvent mener des flux de recherche complets en plusieurs étapes.
+                Démonstration d&apos;un agent IA vocal capable de conduire des recherches
+                approfondies de manière autonome. Utilisez votre voix pour explorer
+                n&apos;importe quel sujet et obtenez des rapports complets avec sources vérifiées.
               </p>
             </div>
 
-            {/* Local Development Notice */}
-            <div className="w-full bg-bgCaution1/20 border border-fgCaution1/30 rounded-lg px-4 py-3">
+            {/* Event Info Notice */}
+            <div className="w-full bg-bgAccent1/20 border border-fgAccent1/30 rounded-lg px-4 py-3">
               <p className="text-xs text-fg2 leading-relaxed text-center">
-                <span className="font-semibold text-fgCaution1">
-                  Développement local :
+                <span className="font-semibold text-fgAccent1">
+                  IA pour la Digitalisation
                 </span>{" "}
-                Assurez-vous d&apos;exécuter l&apos;agent Python d&apos;abord avec{" "}
-                <code className="bg-bg2 px-1.5 py-0.5 rounded text-fgAccent1 font-mono">
-                  python agent.py dev
-                </code>
+                • Découvrez comment les agents IA vocaux peuvent transformer
+                la recherche d&apos;informations et accélérer la prise de décision
               </p>
             </div>
 
-            {/* Documentation Links */}
-            <div className="flex items-center gap-4 text-xs">
-              <a
-                href="https://docs.exa.ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-fg3 hover:text-fgAccent1 underline transition-colors"
-              >
-                Exa Docs
-              </a>
-              <span className="text-separator2">•</span>
-              <a
-                href="https://docs.livekit.io/agents"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-fg3 hover:text-fgAccent1 underline transition-colors"
-              >
-                Agents Docs
-              </a>
-              <span className="text-separator2">•</span>
-              <a
-                href="https://livekit.io/join-slack"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-fg3 hover:text-fgAccent1 underline transition-colors"
-              >
-                Slack
-              </a>
+            {/* Key Features */}
+            <div className="w-full bg-bg2 rounded-lg px-4 py-3">
+              <div className="flex flex-col gap-2 text-xs text-fg2">
+                <div className="flex items-center gap-2">
+                  <span className="text-fgAccent1">✓</span>
+                  <span>Recherche vocale en temps réel</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-fgAccent1">✓</span>
+                  <span>Rapports structurés avec sources vérifiées</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-fgAccent1">✓</span>
+                  <span>Analyse multi-sources et synthèse intelligente</span>
+                </div>
+              </div>
             </div>
 
             {/* Connect Button */}
@@ -194,7 +179,7 @@ function HeaderControls() {
   return (
     <div className="border-b border-separator1 bg-bg1 px-6 py-3 flex items-center justify-between">
       <div className="flex items-center gap-4">
-        <h1 className="text-xl font-bold text-fg0">Exa + LiveKit Deep Researcher</h1>
+        <h1 className="text-xl font-bold text-fg0">Baangre AI</h1>
         <div className="h-4 w-px bg-separator2" />
         <span className="text-sm text-fg3">Assistant de Recherche IA Vocale</span>
       </div>
