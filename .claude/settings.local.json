@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(pip uninstall:*)"
+      "Bash(pip uninstall:*)",
+      "Bash(uv --version:*)",
+      "Bash(uv lock:*)"
     ],
     "deny": [],
     "ask": []
