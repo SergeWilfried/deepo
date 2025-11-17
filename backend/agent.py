@@ -312,7 +312,7 @@ async def entrypoint(ctx: JobContext):
     session = AgentSession[ExaUserData](
         userdata=userdata,
         vad=silero.VAD.load(),
-        stt="assemblyai/universal-streaming",
+        stt="deepgram/nova-3:multi",
         llm="deepseek-ai/deepseek-v3",
         tts=inference.TTS(
             model="elevenlabs/eleven_multilingual_v2", 
